@@ -1,0 +1,3 @@
+{"ts":"2026-08-11T09:30:49.675509+00:00","event":"incident_enabled","incident":"cost_spike"}
+{"ts":"2026-08-11T09:31:48.056782+00:00","event":"config_changed","path":"config/bonus-cost.yaml","summary":"Enabled cost_spike output cap at MAX_OUTPUT_TOKENS=180"}
+{"ts":"2026-08-11T09:33:15.834225+00:00","event":"incident_disabled","incident":"cost_spike"}

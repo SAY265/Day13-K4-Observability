@@ -1,0 +1,14 @@
+{
+  "traffic": 10,
+  "latency_p50": 395.0,
+  "latency_p95": 1102.0,
+  "latency_p99": 1102.0,
+  "avg_cost_usd": 0.0028,
+  "total_cost_usd": 0.028,
+  "tokens_in_total": 330,
+  "tokens_out_total": 1800,
+  "error_rate_pct": 0.0,
+  "quality_avg": 0.88,
+  "optimization": "enabled",
+  "max_output_tokens": 180
+}

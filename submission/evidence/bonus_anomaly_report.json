@@ -1,0 +1,9 @@
+{
+  "records": 165,
+  "responses": 73,
+  "total_cost_usd": 0.2159,
+  "quality_avg": 0.8767,
+  "anomalies": ["error_rate_above_slo"],
+  "status": "alert",
+  "note": "Exit code 1 is expected when the detector finds an anomaly in historical logs."
+}
