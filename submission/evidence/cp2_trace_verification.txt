@@ -1,0 +1,30 @@
+CP2 Langfuse trace verification
+==============================
+API health: ok=true, tracing_enabled=true
+Load test: 10 requests returned HTTP 200 and produced correlation IDs.
+Langfuse API verification: HTTP 200; trace_count_returned=10.
+Trace IDs:
+b2df3cf84f789db73a6ce913f3f5b28c
+cc74bfba696dc6b97dbb5adb1e7c06d6
+14f15f5fa0157aa428bf758561f0ab1f
+5334903485cf645a9c53de6437388b34
+009448f7a2b234f66baea24d3d0ecdc9
+042558c611ab91fa535b43d85d25363e
+078ce64277851cad24a3ce719bdc6cc6
+55e4a87929bec17e4350bd41f2fbb164
+e664525bc012c01e759c472eab03b452
+a9b4bca28f1dac113cba1f76ad0a4889
+Waterfall verification: trace b2df3cf84f789db73a6ce913f3f5b28c has name=run,
+observation_count=1, observation name=run, type=GENERATION.
+
+Rerun verification: Langfuse API HTTP 200, trace_count_returned=10.
+Latest waterfall trace: 0daa0ef439497a8cc85b02481948f393.
+Latest waterfall observation: name=run, type=GENERATION, observation_count=1.
+
+SDK v4 fix verification:
+langfuse==4.7.0, /chat returned HTTP 200 with correlation_id=req-c6eb75c8.
+Langfuse v4 Observations API returned traceId=fdedac458c1a2132167762bc3fc433eb,
+name=run, type=GENERATION, environment=default.
+
+SDK v4 load-test rerun: 10/10 requests returned HTTP 200; after exporter flush,
+the v2 Observations API returned HTTP 200 with 21 unique trace IDs in the sample.

@@ -1,0 +1,19 @@
+{
+  "health": {
+    "ok": true,
+    "tracing_enabled": true
+  },
+  "load_test_requests": 10,
+  "metrics": {
+    "traffic": 10,
+    "latency_p50_ms": 1068.0,
+    "latency_p95_ms": 1129.0,
+    "latency_p99_ms": 1129.0,
+    "avg_cost_usd": 0.0018,
+    "total_cost_usd": 0.0184,
+    "tokens_in_total": 330,
+    "tokens_out_total": 1163,
+    "error_rate_pct": 0.0,
+    "quality_avg": 0.88
+  }
+}

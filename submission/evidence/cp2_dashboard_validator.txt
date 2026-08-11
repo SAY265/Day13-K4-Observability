@@ -1,0 +1,6 @@
+CP2 dashboard contract validation
+===============================
+Command: .venv\Scripts\python.exe scripts\validate_dashboard.py
+Result: HỢP LỆ: 6/6 panel có trong dashboard contract.
+Panels: latency, traffic, errors, cost, tokens, quality
+Contract source: config/dashboard.yaml

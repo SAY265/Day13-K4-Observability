@@ -1,0 +1,7 @@
+CP2 alert and SLO validation
+===========================
+config/slo.yaml: YAML OK
+config/alert_rules.yaml: YAML OK
+alert_rules: 3/3 symptom-based rules OK
+Rules: high_latency_p95, elevated_error_rate, cost_budget_exceeded
+Runbook: docs/alerts.md

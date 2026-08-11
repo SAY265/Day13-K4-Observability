@@ -9,8 +9,8 @@
 
 ## 2. Kết quả kỹ thuật
 
-- Điểm `validate_logs.py`:
-- Tổng số traces:
+- Điểm `validate_logs.py`: 30/100 (baseline CP0)
+- Tổng số traces: 10 (Langfuse API HTTP 200).
 - Số PII leak còn lại:
 - Link/đường dẫn dashboard:
 
@@ -18,7 +18,7 @@
 
 - Evidence correlation ID:
 - Evidence PII redaction:
-- Evidence trace waterfall:
+- Evidence trace waterfall: `submission/evidence/cp2_trace_verification.txt` (SDK v4 trace `fdedac458c1a2132167762bc3fc433eb`, span `run`).
 - Giải thích một span đáng chú ý:
 
 ## 4. Prompt versioning
@@ -31,10 +31,10 @@
 
 ## 5. Dashboard, SLO và alerts
 
-- Kết quả `validate_dashboard.py`:
-- Evidence dashboard:
-- SLO đã chọn và lý do:
-- Alert rules và runbook:
+- Kết quả `validate_dashboard.py`: HỢP LỆ — 6/6 panel.
+- Evidence dashboard: `submission/evidence/cp2_metrics.json` and `cp2_dashboard_validator.txt`.
+- SLO đã chọn và lý do: giữ ngưỡng lab mặc định trong `config/slo.yaml` để làm baseline đo latency, error, cost và quality.
+- Alert rules và runbook: 3 symptom-based alerts đã điền trong `config/alert_rules.yaml` và `docs/alerts.md`.
 
 ## 6. Điều tra challenge
 
