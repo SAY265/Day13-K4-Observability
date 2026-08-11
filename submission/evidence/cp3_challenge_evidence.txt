@@ -1,0 +1,40 @@
+===================================================================
+CP3 CHALLENGE INVESTIGATION EVIDENCE (day13-k4-observability-v1)
+===================================================================
+
+1. TRIỆU CHỨNG TỪ METRICS (METRICS SIGNAL)
+-------------------------------------------------------------------
+- Challenge ID: day13-k4-observability-v1 | Cohort: K4
+- Incident Injected: rag_slow
+- Baseline Latency: ~150ms
+- Challenge Execution Latency: P95 Latency = 2650.8ms (Single Request) / 13289.3ms (Concurrency 5 Tail Latency)
+- Threshold: latency_threshold_ms = 2000ms (EXCEEDED)
+- Error Rate: 0.0%
+
+2. VẾT TRACE & CORRELATION IDS (TRACE WATERFALL SIGNAL)
+-------------------------------------------------------------------
+- Feature Affected: monitoring
+- Correlation IDs:
+  * req-beb37343 (Latency: 2651ms / Total Concurrency: 13287.7ms)
+  * req-f02927e2 (Latency: 2651ms / Total Concurrency: 13289.3ms)
+  * req-f7b05f93 (Latency: 2650ms / Total Concurrency: 13291.2ms)
+  * req-19d4dc94 (Latency: 2650ms / Total Concurrency: 13292.1ms)
+  * req-7cef0ccd (Latency: 2650ms / Total Concurrency: 13288.9ms)
+- Span Breakdown:
+  Span `run` (LabAgent) -> Span `retrieve` (mock_rag.py) taking ~2500ms (blocking sleep).
+
+3. DÒNG LOG THÔ CHỈ RA NGUYÊN NHÂN GỐC (RAW LOG EVIDENCE & ROOT CAUSE)
+-------------------------------------------------------------------
+[Incident Activation Log]:
+{"service": "control", "payload": {"name": "rag_slow"}, "event": "incident_enabled", "correlation_id": "req-f1e2fd38", "level": "warning", "ts": "2026-08-11T08:50:49.943873Z"}
+
+[Request Received Log]:
+{"service": "api", "payload": {"message_preview": "Summarize the observability workflow for an AI API."}, "event": "request_received", "env": "dev", "correlation_id": "req-beb37343", "model": "claude-sonnet-4-5", "user_id_hash": "cbc3dffc63cf", "feature": "monitoring", "session_id": "k4-challenge-s03", "level": "info", "ts": "2026-08-11T08:51:03.547199Z"}
+
+[Response Sent Log (Showing Latency Spike)]:
+{"service": "api", "latency_ms": 2651, "tokens_in": 35, "tokens_out": 178, "cost_usd": 0.002775, "quality_score": 0.8, "payload": {"answer_preview": "Starter answer. Teams should improve this output logic and add better quality ch..."}, "event": "response_sent", "env": "dev", "correlation_id": "req-beb37343", "model": "claude-sonnet-4-5", "user_id_hash": "cbc3dffc63cf", "feature": "monitoring", "session_id": "k4-challenge-s03", "level": "info", "ts": "2026-08-11T08:51:06.199857Z"}
+
+4. NGUYÊN NHÂN GỐC & KHẮC PHỤC (ROOT CAUSE & FIX)
+-------------------------------------------------------------------
+- Root Cause: Incident `rag_slow` được kích hoạt gây ra `time.sleep(2.5)` tại hàm `retrieve()` (app/mock_rag.py).
+- Fix Action: Gửi request `POST /incidents/rag_slow/disable` hoặc sửa trạng thái `STATE["rag_slow"] = False`.

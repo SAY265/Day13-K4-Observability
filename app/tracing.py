@@ -5,7 +5,11 @@ from contextlib import nullcontext
 from typing import Any
 
 try:
-    from langfuse import get_client, observe, propagate_attributes as _propagate_attributes
+    from langfuse import get_client, observe
+    try:
+        from langfuse import propagate_attributes as _propagate_attributes
+    except ImportError:
+        _propagate_attributes = None
 
     LANGFUSE_SDK_AVAILABLE = True
 except ImportError:  # pragma: no cover - chỉ dùng khi chưa cài requirements
