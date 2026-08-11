@@ -4,7 +4,7 @@
 
 - Tên nhóm: 4AM
 - Repository URL: https://github.com/SAY265/Day13-K4-Observability
-- Commit SHA cuối: `7cc95b8de0a713bbbc1f8d7ac7784c499365dafb`
+- Commit SHA cuối: `6b626f1b7157b6948f1050a2be51986083c2d1bb`
 - Thành viên và vai trò:
   - Vũ Quốc Anh - 2A202601080 (Logging & Middleware): Phụ trách CP1 (Middleware, Correlation ID, và gán log metadata).
   - Hà Xuân Sơn - 2A202601904 (Security & Compliance): Phụ trách CP1 (Uncomment processor, cấu hình regex patterns che PII và nâng cấp che PII toàn cục).
@@ -54,7 +54,7 @@
 
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
-| Vũ Quốc Anh - 2A202601080 | Cấu hình `app/middleware.py`, tạo `correlation_id` và gán metadata request context (`user_id_hash`, `session_id`, `feature`, `model`) | `7cc95b8` | Cách truyền vết Correlation ID xuyên suốt qua Structlog Contextvars và HTTP Headers. |
-| Hà Xuân Sơn - 2A202601904 | Hoàn thiện Regex `app/pii.py`, cấu hình processor `scrub_event` trong `app/logging_config.py` | `7cc95b8` | Cách cấu hình pipeline lọc dữ liệu nhạy cảm PII tự động trước khi ghi log. |
-| Chu Tuấn Việt - 2A202601082 | Tích hợp Langfuse SDK, cấu hình Prompt Versioning, xây dựng `config/slo.yaml` và `config/alert_rules.yaml` | `7cc95b8` | Cách quản lý phiên bản prompt thực tế và đo đếm SLO / Alerting cho AI API. |
-| Giáp Quốc Anh - 2A202601522 | Giả lập Load test, thiết kế Dashboard Spec, thực thi bài Challenge CP3 và tổng hợp báo cáo `REPORT.md` | `7cc95b8` | Cách phối hợp 3 trụ cột Observability (Metrics ➔ Traces ➔ Logs) để tìm Root Cause sự cố. |
+| Vũ Quốc Anh - 2A202601080 | Cấu hình `app/middleware.py`, tạo `correlation_id` và gán metadata request context (`user_id_hash`, `session_id`, `feature`, `model`) | `0682a8f471903e70efc91159b32dc0c39926981b` | Cách truyền vết Correlation ID xuyên suốt qua Structlog Contextvars và HTTP Headers. |
+| Hà Xuân Sơn - 2A202601904 | Hoàn thiện Regex `app/pii.py`, cấu hình processor `scrub_event` trong `app/logging_config.py` | `c17869f8c8daf03d8bc66babc3066adf694be043` | Cách cấu hình pipeline lọc dữ liệu nhạy cảm PII tự động trước khi ghi log. |
+| Chu Tuấn Việt - 2A202601082 | Tích hợp Langfuse SDK, cấu hình Prompt Versioning, xây dựng `config/slo.yaml` và `config/alert_rules.yaml` | `7cc95b8de0a713bbbc1f8d7ac7784c499365dafb` | Cách quản lý phiên bản prompt thực tế và đo đếm SLO / Alerting cho AI API. |
+| Giáp Quốc Anh - 2A202601522 | Giả lập Load test, thiết kế Dashboard Spec, thực thi bài Challenge CP3 và tổng hợp báo cáo `REPORT.md` | `6b626f1b7157b6948f1050a2be51986083c2d1bb` | Cách phối hợp 3 trụ cột Observability (Metrics ➔ Traces ➔ Logs) để tìm Root Cause sự cố. |
