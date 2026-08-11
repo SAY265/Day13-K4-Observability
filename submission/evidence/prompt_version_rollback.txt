@@ -1,0 +1,29 @@
+Prompt versioning verification (Langfuse API)
+=============================================
+
+Prompt name: day13-chat
+Prompt contract: Feature={{feature}}, Docs={{docs}}, Question={{message}}
+
+Trace A — baseline v1:
+- trace_id: bc8ae307ccbc7bf4949bc654db2d0daf
+- prompt_name: day13-chat
+- prompt_label: baseline
+- prompt_version: 1
+- prompt_source: langfuse
+
+Trace B — candidate v2 (same input):
+- trace_id: 48b353bbcb3e282dbbb60bddd469e9a5
+- prompt_name: day13-chat
+- prompt_label: candidate
+- prompt_version: 2
+- prompt_source: langfuse
+
+Rollback evidence:
+- Switched production label to version 2; Langfuse returned production version=2.
+- Rolled production label back to version 1; Langfuse returned production version=1,
+  labels=[baseline, production].
+- Post-rollback trace: 589f7965cc31b14a692f0aa8bff85b2e
+- Post-rollback metadata: prompt_name=day13-chat, prompt_label=production,
+  prompt_version=1, prompt_source=langfuse.
+
+All three traces used the same input: "Explain observability in one short answer."

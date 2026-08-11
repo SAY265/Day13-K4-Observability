@@ -4,7 +4,7 @@
 
 - Tên nhóm: 4AM
 - Repository URL: https://github.com/SAY265/Day13-K4-Observability
-- Commit SHA cuối: `6b626f1b7157b6948f1050a2be51986083c2d1bb`
+- Commit SHA cuối: `436ad3a`
 - Thành viên và vai trò:
   - Vũ Quốc Anh - 2A202601080 (Logging & Middleware): Phụ trách CP1 (Middleware, Correlation ID, và gán log metadata).
   - Hà Xuân Sơn - 2A202601904 (Security & Compliance): Phụ trách CP1 (Uncomment processor, cấu hình regex patterns che PII và nâng cấp che PII toàn cục).
@@ -30,8 +30,9 @@
 - Prompt name: `day13-chat`
 - Version/label baseline: `qa-v1` / `production`
 - Version/label candidate: `qa-v2` / `staging`
-- Trace ID của mỗi version: `fdedac458c1a2132167762bc3fc433eb`
-- Bằng chứng đổi label hoặc rollback: `submission/evidence/cp2_tracing.png`
+- Trace v1/baseline: `bc8ae307ccbc7bf4949bc654db2d0daf`; trace v2/candidate: `48b353bbcb3e282dbbb60bddd469e9a5`.
+- Trace sau rollback về production/v1: `589f7965cc31b14a692f0aa8bff85b2e`.
+- Bằng chứng metadata và đổi label/rollback: `submission/evidence/prompt_version_rollback.txt`; ảnh giao diện Langfuse: `submission/evidence/cp2_tracing.png`.
 
 ## 5. Dashboard, SLO và alerts
 
